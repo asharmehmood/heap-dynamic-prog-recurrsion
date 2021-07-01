@@ -1,0 +1,16 @@
+Algorithm description:
+
+So, first of all we have a points class which basically deals with the coordinates system and treat x and y coordinates as a single objects. Similarly, we have distance calculation of points and print points function to find distance and print points object as simple subtraction and print function does not work for the point object.
+
+Algorithm starts with creating points array with the help of points class.
+Then it sorts the array with O(nlogn) complexity with respect to x coordinates and y coordinates separtely (preprocessing step).
+In next step, it divides the array into halves by finding middle point and find the closest points recursively with the help of distance function/formula.
+When recursive operations are done, we get two smallest distance. One from the left subarray and other from the right subarray. Let's take upper bound distance as 'd'
+At this point we have covered the points from each subarrays but there is a case that two points are closest but those points are in different subarray (left subarray and right subarray). To deal with this we will further work on it.
+For the above mentioned problem, we will find all the points which have less x-coordinate distance than the 'd' because if they have less x-coordinates distance than it is possible they are more closer otherwise 'd' will be the smallest distance. So, we will extract all those points in strip array.
+Now, we will sort the striped array with respect to y axis (coordinates). It will help finding the smaller distance.
+Find the smallest distance from the sorted striped array. It looks like, it has O(n^2) complexity but it is proven that it checks only 7 points.
+In the end, we return the minimum of this distance (smallest distance from striped array) and 'd' with their points.
+
+Complexity: O(n(log(n))^2)
+ 

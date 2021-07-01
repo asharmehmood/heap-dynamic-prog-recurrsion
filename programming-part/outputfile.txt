@@ -1,0 +1,2 @@
+Closest points are: (2,3) (3,4)
+Distance between these points: 1.4142135623730951
